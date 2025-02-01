@@ -1,175 +1,304 @@
-import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Stack,
+  Typography,
+  Container,
+  IconButton,
+} from "@mui/material";
 import React from "react";
 import { pages } from "../Constants";
 import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import XIcon from "@mui/icons-material/X";
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "primary.main", p: { md: 3 } }}>
-      <Grid container padding={1} spacing={3}>
-        <Grid item xs={12} md={3}>
-          <Paper
-            elevation={3}
-            sx={{
-              bgcolor: "white",
-              alignItems: "center",
-              borderRadius: "10px",
-              height: "300px",
-              p: 4,
-            }}
-          >
-            <Stack spacing={1}>
-              <Typography variant="h5" color="primary">
-                {" "}
-                Quick Links{" "}
-              </Typography>
-              {pages?.map(({ name, path }) => (
-                <Button
-                  key={name}
-                  component={Link}
-                  to={path}
+    <Box
+      sx={{
+        backgroundColor: "success.main",
+        pt: { xs: 4, md: 6 },
+        pb: { xs: 3, md: 4 },
+      }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={{ xs: 2, md: 4 }}>
+          {/* Quick Links Section */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper
+              elevation={3}
+              sx={{
+                bgcolor: "rgba(255, 255, 255, 0.95)",
+                borderRadius: "8px",
+                height: "100%",
+                p: { xs: 2, md: 3 },
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <Stack spacing={2}>
+                <Typography
+                  variant="h6"
+                  color="primary"
                   sx={{
-                    display: "block",
-                    fontWeight: 500,
-                    fontSize: 14,
-                    "&:hover": {
-                      color: "white",
-                      backgroundColor: "#270082",
-                    },
+                    fontWeight: 600,
+                    pb: 1,
+                    borderBottom: "2px solid",
+                    borderColor: "primary.main",
                   }}
                 >
-                  {name}
-                </Button>
-              ))}
-            </Stack>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Paper
-            elevation={3}
-            sx={{
-              bgcolor: "white",
-              alignItems: "center",
-              borderRadius: "10px",
-              height: "300px",
-              p: 4,
-            }}
-          >
-            <Stack spacing={3}>
-              <Typography variant="h5" color="primary">
-                Address
-              </Typography>
-              <Typography variant="body1" color="primary">
-                Beehama.
-              </Typography>
-              <Typography variant="body1" color="primary">
-                Ganderbal,Jammu and Kashmir.
-              </Typography>
-              <Typography variant="body1" color="primary">
-                191201.
-              </Typography>
-            </Stack>{" "}
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Paper
-            elevation={3}
-            sx={{
-              bgcolor: "white",
-              alignItems: "center",
-              borderRadius: "10px",
-              height: "300px",
-              p: 4,
-            }}
-          >
-            <Stack spacing={3}>
-              <Typography variant="h5" color="primary">
-                Phone
-              </Typography>
-              <Typography variant="body1" color="primary">
-                M:+91-9858883373
-              </Typography>
-              <Typography variant="body1" color="primary">
-                T:0194-2416446
-              </Typography>
-              <Typography variant="body2" color="primary">
-                Email:kashmirkikaligbl@gmail.com.
-              </Typography>
-            </Stack>{" "}
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Paper
-            elevation={3}
-            sx={{
-              bgcolor: "white",
-              alignItems: "center",
-              borderRadius: "10px",
-              height: "300px",
-              p: 4,
-            }}
-          >
-            <Stack spacing={2}>
-              <Typography variant="h5" color="primary">
-                Connect{" "}
-              </Typography>
-              <Box>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100094492004593&mibextid=ZbWKwL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ paddingRight: "20px" }}
-                >
-                  <FacebookIcon
+                  Quick Links
+                </Typography>
+                {pages?.map(({ name, path }) => (
+                  <Button
+                    key={name}
+                    component={Link}
+                    to={path}
                     sx={{
-                      fontSize: 40,
-                      color: "#3b5998",
+                      display: "block",
+                      textAlign: "left",
+                      color: "text.primary",
+                      fontFamily: "'Roboto Slab', serif",
+                      fontWeight: 500,
+                      fontSize: { xs: "0.875rem", md: "1rem" },
+                      pl: 0,
                       "&:hover": {
-                        transform: "scale(1.8)",
+                        color: "primary.main",
+                        backgroundColor: "transparent",
+                        pl: 1,
+                        transition: "all 0.3s ease",
                       },
                     }}
-                  />
-                </a>
-                <a
-                  href="https://instagram.com/hermosatrips?igshid=MzRlODBiNWFlZA=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ paddingRight: "20px" }}
+                  >
+                    {name}
+                  </Button>
+                ))}
+              </Stack>
+            </Paper>
+          </Grid>
+
+          {/* Address Section */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper
+              elevation={3}
+              sx={{
+                bgcolor: "rgba(255, 255, 255, 0.95)",
+                borderRadius: "8px",
+                height: "100%",
+                p: { xs: 2, md: 3 },
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <Stack spacing={2}>
+                <Typography
+                  variant="h6"
+                  color="primary"
+                  sx={{
+                    fontWeight: 600,
+                    pb: 1,
+                    borderBottom: "2px solid",
+                    borderColor: "primary.main",
+                  }}
                 >
-                  <InstagramIcon
-                    sx={{
-                      fontSize: 40,
-                      color: "#E1306C",
-                      "&:hover": {
-                        transform: "scale(1.8)",
-                      },
-                    }}
-                  />
-                </a>
-                <a
-                  href="https://wa.me/9858883373"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ paddingRight: "20px" }}
+                  Address
+                </Typography>
+                <Box
+                  sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}
                 >
-                  <WhatsAppIcon
+                  <LocationOnIcon color="primary" />
+                  <Typography variant="body1" color="text.secondary">
+                    Ninety feet road
+                    <br />
+                    near Moomin steels , <br />
+                    Illahibagh, <br />
+                    Srinagar <br />
+                    Jammu and Kashmir 190020 <br />
+                  </Typography>
+                </Box>
+              </Stack>
+            </Paper>
+          </Grid>
+
+          {/* Contact Section */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper
+              elevation={3}
+              sx={{
+                bgcolor: "rgba(255, 255, 255, 0.95)",
+                borderRadius: "8px",
+                height: "100%",
+                p: { xs: 2, md: 3 },
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <Stack spacing={2}>
+                <Typography
+                  variant="h6"
+                  color="primary"
+                  sx={{
+                    fontWeight: 600,
+                    pb: 1,
+                    borderBottom: "2px solid",
+                    borderColor: "primary.main",
+                  }}
+                >
+                  Contact
+                </Typography>
+                <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
+                  <PhoneIcon color="primary" />
+                  <Typography variant="body2" color="text.secondary">
+                    +91-6005141549{" "}
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
+                  <EmailIcon color="primary" />
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ wordBreak: "break-word" }}
+                  >
+                    <a
+                      href="mailto:Koshurdodh@gmail.com"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Koshurdodh@gmail.com
+                    </a>{" "}
+                  </Typography>
+                </Box>
+              </Stack>
+            </Paper>
+          </Grid>
+
+          {/* Connect Section */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Paper
+              elevation={3}
+              sx={{
+                bgcolor: "rgba(255, 255, 255, 0.95)",
+                borderRadius: "8px",
+                height: "100%",
+                p: { xs: 2, md: 3 },
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
+              }}
+            >
+              <Stack spacing={2}>
+                <Typography
+                  variant="h6"
+                  color="primary"
+                  sx={{
+                    fontWeight: 600,
+                    pb: 1,
+                    borderBottom: "2px solid",
+                    borderColor: "primary.main",
+                  }}
+                >
+                  Connect
+                </Typography>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <IconButton
+                    component="a"
+                    href="https://www.facebook.com/share/14vRrG2oyT/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     sx={{
-                      fontSize: 40,
-                      color: "#25D366",
+                      backgroundColor: "#3b5998",
+                      color: "white",
                       "&:hover": {
-                        transform: "scale(1.8)",
+                        backgroundColor: "#2d4373",
+                        transform: "scale(1.1)",
                       },
+                      transition: "all 0.3s ease",
                     }}
-                  />
-                </a>
-              </Box>
-            </Stack>
-          </Paper>
+                  >
+                    <FacebookIcon />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://www.instagram.com/koshurdodh?igsh=MTRkdHBsdWhvMHhx&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: "#E1306C",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "#c13584",
+                        transform: "scale(1.1)",
+                      },
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <InstagramIcon />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://x.com/koshurdosh?s=11"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: "black", // X (Twitter) brand color
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "#1DA1F2", // X (Twitter) blue
+                        transform: "scale(1.1)",
+                      },
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <XIcon />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://wa.me/6005141549"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: "#25D366",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "#128C7E",
+                        transform: "scale(1.1)",
+                      },
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <WhatsAppIcon />
+                  </IconButton>
+                </Box>
+              </Stack>
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
+
+        <Typography
+          variant="body2"
+          align="center"
+          sx={{
+            color: "rgba(255, 255, 255, 0.8)",
+            mt: { xs: 3, md: 4 },
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+          }}
+        >
+          © {new Date().getFullYear()} Kashmir Ki Kali. All rights reserved.
+        </Typography>
+      </Container>
     </Box>
   );
 };

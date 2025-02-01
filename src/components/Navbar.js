@@ -128,6 +128,7 @@ const Navbar = () => {
                   display: "block",
                   fontWeight: 700,
                   fontSize: 14,
+                  fontFamily: "Matemasie",
                   "&:hover": {
                     color: "grey",
                     backgroundColor: "white",

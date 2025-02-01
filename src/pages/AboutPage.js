@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import vision from "../assets/images/vision.jpg";
+
 const AboutPage = () => {
   return (
     <Box sx={{ margin: { xs: "2rem 1rem", sm: "4rem 2rem", md: "6rem 8rem" } }}>
@@ -11,6 +12,8 @@ const AboutPage = () => {
           textAlign: "center",
           marginBottom: "2rem",
           fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
+          fontFamily: "Matemasie",
+          color: "#1a237e",
         }}
       >
         About Us
@@ -28,11 +31,11 @@ const AboutPage = () => {
             variant="body1"
             sx={{ marginTop: "1rem", fontSize: "1.1rem" }}
           >
-            We are a dedicated travel company passionate about helping you
-            explore the beauty of Kashmir. Our packages are carefully crafted to
-            offer the best experiences, whether you're looking for adventure,
-            relaxation, or cultural immersion. With years of experience, we know
-            how to make your trip unforgettable.
+            Welcome to Koshur Dodh, your trusted source for fresh, high-quality
+            dairy products. Our journey began with a commitment to delivering
+            nutritious and wholesome milk directly from our farms to your
+            doorstep. We believe in sustainable farming practices and the
+            importance of purity in every drop we offer.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -62,11 +65,10 @@ const AboutPage = () => {
             variant="body1"
             sx={{ marginTop: "1rem", fontSize: "1.1rem" }}
           >
-            Our mission is to showcase the unparalleled beauty of Kashmir to the
-            world. We aim to provide exceptional service, ensuring that every
-            aspect of your trip is seamless and enjoyable. From accommodations
-            to guided tours, we take care of everything so you can focus on
-            making memories.
+            Our mission is to provide fresh, healthy, and ethically sourced
+            dairy products to our customers. We aim to support local farmers,
+            uphold the highest standards of quality, and ensure that every
+            product you receive is packed with nutrition and goodness.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -81,10 +83,12 @@ const AboutPage = () => {
             variant="body1"
             sx={{ marginTop: "1rem", fontSize: "1.1rem" }}
           >
-            We offer personalized packages tailored to your preferences. Our
-            local expertise and commitment to quality ensure that you have the
-            best possible experience. Whether you're a solo traveler, a couple,
-            or a family, we have something special for you.
+            At Koshur Dodh, we pride ourselves on transparency, quality, and
+            customer satisfaction. Our products are sourced directly from
+            trusted farms, ensuring freshness and purity. Whether it's milk,
+            yogurt, cheese, or other dairy essentials, we guarantee the finest
+            products for your family. Choose us for a healthier, happier
+            lifestyle.
           </Typography>
         </Grid>
       </Grid>

@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import FlightIcon from "@mui/icons-material/Flight";
-import HotelIcon from "@mui/icons-material/Hotel";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import PublicIcon from "@mui/icons-material/Public";
+import LocalDrinkIcon from "@mui/icons-material/LocalDrink"; // Milk icon
+import IcecreamIcon from "@mui/icons-material/Icecream"; // Cheese/butter icon
+import AgricultureIcon from "@mui/icons-material/Agriculture"; // Farm visits icon
+import ForestIcon from "@mui/icons-material/Forest";
 
 const CustomBox = styled(Box)(({ theme, color }) => ({
   display: "flex",
@@ -48,36 +48,36 @@ const ServicesCard = () => {
           sx={{
             backgroundColor: "#B9F3FC",
             borderRadius: "8px",
-            display: "inline", // Ensure the background color wraps around the text only
-            padding: "0.4rem 0.8rem", // Optional: Adds some padding around the text
+            display: "inline",
+            padding: "0.4rem 0.8rem",
           }}
         >
-          Services Available for You
+          Dairy Services Available for You
         </Box>
       </Typography>
       <Box display="flex" flexWrap="wrap" justifyContent="center" p={2} gap={2}>
         <CustomBox color="#B9F3FC">
-          <FlightIcon fontSize="large" sx={{ fontSize: 40 }} />
+          <LocalDrinkIcon fontSize="large" sx={{ fontSize: 40 }} />
           <Typography variant="caption" sx={{ fontSize: 16 }}>
-            Flights
+            Fresh Milk
           </Typography>
         </CustomBox>
         <CustomBox color="#B9F3FC">
-          <HotelIcon fontSize="large" sx={{ fontSize: 40 }} />
+          <IcecreamIcon fontSize="large" sx={{ fontSize: 40 }} />
           <Typography variant="caption" sx={{ fontSize: 16 }}>
-            Hotels
+            Butter & Cheese
           </Typography>
         </CustomBox>
         <CustomBox color="#B9F3FC">
-          <FastfoodIcon fontSize="large" sx={{ fontSize: 40 }} />
+          <ForestIcon fontSize="large" sx={{ fontSize: 40 }} />
           <Typography variant="caption" sx={{ fontSize: 16 }}>
-            Snacks
+            Organic Products
           </Typography>
         </CustomBox>
         <CustomBox color="#B9F3FC">
-          <PublicIcon fontSize="large" sx={{ fontSize: 40 }} />
+          <AgricultureIcon fontSize="large" sx={{ fontSize: 40 }} />
           <Typography variant="caption" sx={{ fontSize: 16 }}>
-            Travel
+            Farm Visits
           </Typography>
         </CustomBox>
       </Box>
