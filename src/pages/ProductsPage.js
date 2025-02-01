@@ -9,7 +9,15 @@ import {
   Box,
   Divider,
 } from "@mui/material";
-
+import freshMilk from "../assets/images/fresh-milk.webp";
+import curd from "../assets/images/curd.jpeg";
+import cheese from "../assets/images/cheese.png";
+import butter from "../assets/images/butter.avif";
+import ghee from "../assets/images/ghee.jpg";
+import processingEquipment from "../assets/images/processing-equipment.jpg";
+import testingKit from "../assets/images/testing-kit.jpg";
+import storageTank from "../assets/images/storage-tank.avif";
+import sanitizer from "../assets/images/sanitizer.jpeg";
 const Products = () => {
   const dairyProducts = [
     {
@@ -17,35 +25,35 @@ const Products = () => {
       name: "Fresh Milk",
       description:
         "Farm-fresh, pasteurized milk rich in calcium, protein, and essential nutrients. Available in various quantities to suit your needs.",
-      image: "/Images/fresh-milk.webp",
+      image: freshMilk,
     },
     {
       id: 2,
       name: "Curd/Yogurt",
       description:
         "Creamy, probiotic-rich curd made from fresh milk. Perfect for a healthy diet and better digestion.",
-      image: "/images/curd.jpeg",
+      image: curd,
     },
     {
       id: 3,
       name: "Paneer",
       description:
         "Fresh, homemade cottage cheese made from pure milk. High in protein and perfect for various culinary applications.",
-      image: "/images/cheese.png",
+      image: cheese,
     },
     {
       id: 4,
       name: "Butter",
       description:
         "Pure dairy butter churned from fresh cream. Rich in taste and perfect for everyday use.",
-      image: "/images/butter.avif",
+      image: butter,
     },
     {
       id: 5,
       name: "Ghee",
       description:
         "Traditional clarified butter made from pure milk cream. Known for its rich aroma and authentic taste.",
-      image: "/images/ghee.jpg",
+      image: ghee,
     },
   ];
 
@@ -55,28 +63,28 @@ const Products = () => {
       name: "Milk Processing Equipment",
       description:
         "State-of-the-art pasteurization and homogenization equipment that ensures the highest quality and safety standards in milk processing.",
-      image: "/images/processing-equipment.jpg",
+      image: processingEquipment,
     },
     {
       id: 7,
       name: "Quality Testing Kits",
       description:
         "Advanced testing equipment for monitoring milk quality, including fat content, SNF, protein analysis, and contamination detection.",
-      image: "/images/testing-kit.jpg",
+      image: testingKit,
     },
     {
       id: 8,
       name: "Storage Solutions",
       description:
         "Temperature-controlled bulk milk coolers and storage tanks that maintain optimal conditions for preserving milk freshness.",
-      image: "/images/storage-tank.avif",
+      image: storageTank,
     },
     {
       id: 9,
       name: "Dairy Plant Sanitizers",
       description:
         "Food-grade sanitizing solutions specifically designed for dairy equipment and processing areas, ensuring maximum hygiene.",
-      image: "/images/sanitizer.jpeg",
+      image: sanitizer,
     },
   ];
 
