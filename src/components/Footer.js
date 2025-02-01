@@ -28,7 +28,7 @@ const Footer = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={{ xs: 2, md: 4 }}>
+        <Grid container spacing={{ xs: 6, md: 3 }}>
           {/* Quick Links Section */}
           <Grid item xs={12} sm={6} md={3}>
             <Paper
@@ -286,18 +286,19 @@ const Footer = () => {
             </Paper>
           </Grid>
         </Grid>
-
-        <Typography
-          variant="body2"
-          align="center"
-          sx={{
-            color: "rgba(255, 255, 255, 0.8)",
-            mt: { xs: 3, md: 4 },
-            fontSize: { xs: "0.75rem", md: "0.875rem" },
-          }}
-        >
-          © {new Date().getFullYear()} Kashmir Ki Kali. All rights reserved.
-        </Typography>
+        <Grid item xs={12} sx={{ mt: 7 }}>
+          <Typography
+            variant="body2"
+            align="center"
+            sx={{
+              color: "rgba(255, 255, 255, 0.8)",
+              mt: { xs: 3, md: 4 },
+              fontSize: { xs: "0.75rem", md: "0.875rem" },
+            }}
+          >
+            © {new Date().getFullYear()} Koshur dodh All rights reserved.
+          </Typography>
+        </Grid>
       </Container>
     </Box>
   );
