@@ -44,7 +44,7 @@ const Navbar = () => {
               ml: 6,
             }}
           >
-            Koshur Dod'h
+            KOSHUR DOD'H
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -107,7 +107,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            Koshur Dod'h
+            KOSHUR DOD'H
           </Typography>
 
           <Box

@@ -118,12 +118,12 @@ const Footer = () => {
                 >
                   <LocationOnIcon color="primary" />
                   <Typography variant="body1" color="text.secondary">
-                    Ninety feet road
+                    Ninety Feet Road
                     <br />
-                    near Moomin steels , <br />
+                    Near Moomin Steels , <br />
                     Illahibagh, <br />
-                    Srinagar <br />
-                    Jammu and Kashmir 190020 <br />
+                    Srinagar, <br />
+                    Jammu and Kashmir, 190020 <br />
                   </Typography>
                 </Box>
               </Stack>
@@ -296,7 +296,7 @@ const Footer = () => {
               fontSize: { xs: "0.75rem", md: "0.875rem" },
             }}
           >
-            © {new Date().getFullYear()} Koshur dodh All rights reserved.
+            © {new Date().getFullYear()} KOSHUR DOD'H All rights reserved.
           </Typography>
         </Grid>
       </Container>

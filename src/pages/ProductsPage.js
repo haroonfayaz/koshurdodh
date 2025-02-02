@@ -88,7 +88,7 @@ const Products = () => {
     },
   ];
 
-  const ProductSection = ({ title, products }) => (
+  const ProductSection = ({ title, products, isDairySection }) => (
     <>
       <Typography
         component="h2"
@@ -101,54 +101,101 @@ const Products = () => {
         {title}
       </Typography>
       <Grid container spacing={4}>
-        {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4}>
-            <Card
-              sx={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                transition: "transform 0.2s",
-                "&:hover": {
-                  transform: "scale(1.02)",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
-                },
-              }}
+        {products.map((product) => {
+          const isComingSoon = isDairySection && product.name !== "Fresh Milk";
+
+          return (
+            <Grid
+              item
+              key={product.id}
+              xs={12}
+              sm={6}
+              md={4}
+              sx={{ position: "relative" }}
             >
-              <CardMedia
-                component="img"
+              <Card
                 sx={{
-                  height: 200,
-                  objectFit: "cover",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: isComingSoon ? "none" : "transform 0.2s",
+                  "&:hover": !isComingSoon && {
+                    transform: "scale(1.02)",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
+                  },
                 }}
-                image={product.image}
-                alt={product.name}
-              />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography
-                  gutterBottom
-                  variant="h6"
-                  component="h2"
+              >
+                {/* Coming Soon Overlay for Dairy Products Except Fresh Milk */}
+                {isComingSoon && (
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
+                      borderRadius: "8px",
+                      zIndex: 1,
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontSize: "40px",
+                        color: "red",
+                        fontWeight: "bold",
+                        textTransform: "uppercase",
+                        transform: "rotate(-15deg)",
+                        padding: "8px 16px",
+                        fontFamily: "Matemasie",
+                      }}
+                    >
+                      Coming Soon
+                    </Typography>
+                  </Box>
+                )}
+
+                <CardMedia
+                  component="img"
                   sx={{
-                    color: "#2c3e50",
-                    fontWeight: "500",
+                    height: 200,
+                    objectFit: "cover",
+                    filter: isComingSoon ? "grayscale(80%)" : "none",
                   }}
-                >
-                  {product.name}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#7f8c8d",
-                    lineHeight: "1.6",
-                  }}
-                >
-                  {product.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
+                  image={product.image}
+                  alt={product.name}
+                />
+
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="h2"
+                    sx={{
+                      color: "#2c3e50",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {product.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#7f8c8d",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    {product.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          );
+        })}
       </Grid>
     </>
   );
@@ -186,7 +233,11 @@ const Products = () => {
           nutritional value.
         </Typography>
 
-        <ProductSection title="Dairy Products" products={dairyProducts} />
+        <ProductSection
+          title="Dairy Products"
+          products={dairyProducts}
+          isDairySection={true}
+        />
         <Divider sx={{ my: 6 }} />
         <ProductSection title="Hygiene Products" products={hygieneProducts} />
       </Container>

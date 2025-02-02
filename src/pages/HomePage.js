@@ -100,7 +100,7 @@ const HomePage = () => {
                 fontFamily: "Matemasie",
               }}
             >
-              Koshur Dod'h
+              KOSHUR DOD'H
             </Typography>
             <Typography
               variant="h2"
