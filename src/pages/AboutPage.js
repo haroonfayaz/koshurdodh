@@ -155,9 +155,9 @@ const AboutPage = () => {
           >
             At KOSHUR DOD'H, we pride ourselves on transparency, quality, and
             customer satisfaction. Our products are sourced directly from
-            trusted farms, ensuring freshness and purity. We guarantee the
-            finest products for your family. Choose us for a healthier, happier
-            lifestyle.
+            Trusted milk farmers, ensuring freshness and purity. We guarantee
+            the finest products for your family. Choose us for a healthier,
+            happier lifestyle.
           </Typography>
         </Grid>
       </Grid>

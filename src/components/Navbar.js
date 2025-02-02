@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Container } from "@mui/material";
 import { pages } from "../Constants";
+import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -27,27 +28,46 @@ const Navbar = () => {
     <AppBar position="fixed" color="success">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
+          {/* Logo */}
+          <Box
             component={Link}
             to="/"
             sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              flexGrow: 1,
-              fontFamily: "Matemasie",
-              fontWeight: 500,
-              letterSpacing: ".1rem",
-              color: "inherit",
+              display: "flex",
+              alignItems: "center",
               textDecoration: "none",
-              ml: 6,
             }}
           >
-            KOSHUR DOD'H
-          </Typography>
+            <Box
+              component="img"
+              src={logo}
+              alt="Logo"
+              sx={{
+                height: 40,
+                width: "auto",
+                mr: 2,
+                borderRadius: "10px",
+                ml: 2,
+                display: { xs: "none", md: "flex" },
+              }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                display: { xs: "none", md: "flex" },
+                fontFamily: "Matemasie",
+                fontWeight: 500,
+                letterSpacing: ".1rem",
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              KOSHUR DOD'H
+            </Typography>
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 3 }}>
             <IconButton
               size="large"
               aria-label="menu"
@@ -61,20 +81,12 @@ const Navbar = () => {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
+              transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map(({ name, path }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
@@ -90,32 +102,50 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
+          <Box
             component={Link}
             to="/"
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "Matemasie",
-              fontWeight: 500,
-              letterSpacing: ".1rem",
-              color: "inherit",
+              display: "flex",
+              alignItems: "center",
               textDecoration: "none",
             }}
           >
-            KOSHUR DOD'H
-          </Typography>
+            <Box
+              component="img"
+              src={logo}
+              alt="Logo"
+              sx={{
+                height: 40,
+                width: "auto",
+                mr: 2,
+                borderRadius: "10px",
+                ml: 0,
+                display: { xs: "flex", md: "none" },
+              }}
+            />
+            {/* Mobile Logo */}
+            <Typography
+              variant="h5"
+              noWrap
+              component={Link}
+              to="/"
+              sx={{
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "Matemasie",
+                fontWeight: 500,
+                letterSpacing: ".1rem",
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              KOSHUR DOD'H
+            </Typography>
+          </Box>
 
           <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              marginLeft: 30,
-            }}
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: 30 }}
           >
             {pages.map(({ name, path }) => (
               <Button

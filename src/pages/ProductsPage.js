@@ -158,7 +158,7 @@ const Products = () => {
                           py: 0.5,
                           color: "white",
                           fontWeight: "bold",
-                          fontSize: "14px",
+                          fontSize: "12px",
                           textTransform: "uppercase",
                           background:
                             "linear-gradient(45deg, #388e3c, #2e7d32, #1b5e20)", // Different green shades
