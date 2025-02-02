@@ -145,8 +145,8 @@ const Products = () => {
                     <Typography
                       variant="h5"
                       sx={{
-                        fontSize: "40px",
-                        color: "red",
+                        fontSize: "35px",
+                        color: "green",
                         fontWeight: "bold",
                         textTransform: "uppercase",
                         transform: "rotate(-15deg)",

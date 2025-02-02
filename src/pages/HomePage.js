@@ -66,129 +66,6 @@ const HomePage = () => {
 
   return (
     <Box sx={{ overflow: "hidden" }}>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          },
-        }}
-      >
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-          <Box sx={{ textAlign: "center", py: 8 }}>
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: { xs: "2.5rem", md: "4rem", lg: "5rem" },
-                fontWeight: 700,
-                color: "white",
-                mb: 3,
-                textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
-                fontFamily: "Matemasie",
-              }}
-            >
-              KOSHUR DOD'H
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                fontSize: { xs: "1.2rem", md: "1.8rem" },
-                color: "white",
-                mb: 4,
-                maxWidth: "800px",
-                mx: "auto",
-                lineHeight: 1.6,
-                fontFamily: "Matemasie",
-              }}
-            >
-              Bringing the Pure Taste of Kashmir Valley to Your Doorstep
-            </Typography>
-            <Button
-              onClick={handleOrderClick}
-              variant="contained"
-              size="large"
-              sx={{
-                py: 2,
-                px: 6,
-                fontSize: "1.2rem",
-                borderRadius: "50px",
-                backgroundColor: "#fff",
-                color: "#1a237e",
-                "&:hover": {
-                  backgroundColor: "#1a237e",
-                  color: "#fff",
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-                },
-                transition: "all 0.3s ease",
-                fontFamily: "Matemasie",
-              }}
-            >
-              Contact Us
-            </Button>
-          </Box>
-        </Container>
-      </Box>
-
-      {/* Features Section */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h3"
-            sx={{
-              textAlign: "center",
-              mb: 6,
-              color: "#1a237e",
-              fontWeight: 600,
-            }}
-          >
-            Why Choose Us
-          </Typography>
-          <Grid container spacing={4}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
-                    p: 3,
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-10px)",
-                    },
-                  }}
-                  elevation={0}
-                >
-                  <Box sx={{ mb: 2 }}>{feature.icon}</Box>
-                  <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
-                    {feature.title}
-                  </Typography>
-                  <Typography color="text.secondary">
-                    {feature.description}
-                  </Typography>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
       {/* Products Section */}
       <Box sx={{ py: 8 }}>
         <Container maxWidth="lg">
@@ -204,34 +81,76 @@ const HomePage = () => {
             Our Products
           </Typography>
           <Grid container spacing={4}>
-            {products.map((product, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.03)",
-                    },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    height="240"
-                    image={product.image}
-                    alt={product.title}
-                  />
-                  <CardContent>
-                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 600 }}>
-                      {product.title}
-                    </Typography>
-                    <Typography color="text.secondary">
-                      {product.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
+            {products.map((product, index) => {
+              const isComingSoon = product.title !== "Fresh Milk";
+
+              return (
+                <Grid item xs={12} md={4} key={index}>
+                  <Card
+                    sx={{
+                      height: "100%",
+                      position: "relative",
+                      transition: isComingSoon ? "none" : "transform 0.3s ease",
+                      "&:hover": !isComingSoon && {
+                        transform: "scale(1.03)",
+                      },
+                    }}
+                  >
+                    {/* Coming Soon Overlay */}
+                    {isComingSoon && (
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          backgroundColor: "rgba(255, 255, 255, 0.6)",
+                          borderRadius: "8px",
+                          zIndex: 1,
+                        }}
+                      >
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontSize: "35px",
+                            color: "green",
+                            fontWeight: "bold",
+                            textTransform: "uppercase",
+                            transform: "rotate(-15deg)",
+                            padding: "8px 16px",
+                            fontFamily: "Matemasie",
+                          }}
+                        >
+                          Coming Soon
+                        </Typography>
+                      </Box>
+                    )}
+
+                    <CardMedia
+                      component="img"
+                      height="240"
+                      image={product.image}
+                      alt={product.title}
+                      sx={{
+                        filter: isComingSoon ? "grayscale(80%)" : "none",
+                      }}
+                    />
+                    <CardContent>
+                      <Typography variant="h5" sx={{ mb: 1, fontWeight: 600 }}>
+                        {product.title}
+                      </Typography>
+                      <Typography color="text.secondary">
+                        {product.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
       </Box>
