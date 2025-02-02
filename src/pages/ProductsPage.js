@@ -8,6 +8,7 @@ import {
   CardMedia,
   Box,
   Divider,
+  Stack,
 } from "@mui/material";
 import freshMilk from "../assets/images/fresh-milk.webp";
 import curd from "../assets/images/curd.jpeg";
@@ -33,6 +34,7 @@ const Products = () => {
       description:
         "Creamy, probiotic-rich curd made from fresh milk. Perfect for a healthy diet and better digestion.",
       image: curd,
+      status: "Coming Soon",
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ const Products = () => {
       description:
         "Fresh, homemade cottage cheese made from pure milk. High in protein and perfect for various culinary applications.",
       image: cheese,
+      status: "Coming Soon",
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ const Products = () => {
       description:
         "Pure dairy butter churned from fresh cream. Rich in taste and perfect for everyday use.",
       image: butter,
+      status: "Coming Soon",
     },
     {
       id: 5,
@@ -54,6 +58,7 @@ const Products = () => {
       description:
         "Traditional clarified butter made from pure milk cream. Known for its rich aroma and authentic taste.",
       image: ghee,
+      status: "Coming Soon",
     },
   ];
 
@@ -125,40 +130,6 @@ const Products = () => {
                   },
                 }}
               >
-                {/* Coming Soon Overlay for Dairy Products Except Fresh Milk */}
-                {isComingSoon && (
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      borderRadius: "8px",
-                      zIndex: 1,
-                    }}
-                  >
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontSize: "35px",
-                        color: "green",
-                        fontWeight: "bold",
-                        textTransform: "uppercase",
-                        transform: "rotate(-15deg)",
-                        padding: "8px 16px",
-                        fontFamily: "Matemasie",
-                      }}
-                    >
-                      Coming Soon
-                    </Typography>
-                  </Box>
-                )}
-
                 <CardMedia
                   component="img"
                   sx={{
@@ -171,17 +142,34 @@ const Products = () => {
                 />
 
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography
-                    gutterBottom
-                    variant="h6"
-                    component="h2"
-                    sx={{
-                      color: "#2c3e50",
-                      fontWeight: "500",
-                    }}
+                  <Stack
+                    direction="row"
+                    spacing={2}
+                    sx={{ alignItems: "center" }}
                   >
-                    {product.name}
-                  </Typography>
+                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 600 }}>
+                      {product.name}
+                    </Typography>
+                    {product.status === "Coming Soon" && (
+                      <Typography
+                        sx={{
+                          display: "inline-block",
+                          px: 2,
+                          py: 0.5,
+                          color: "white",
+                          fontWeight: "bold",
+                          fontSize: "14px",
+                          textTransform: "uppercase",
+                          background:
+                            "linear-gradient(45deg, #388e3c, #2e7d32, #1b5e20)", // Different green shades
+                          clipPath:
+                            "polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%)",
+                        }}
+                      >
+                        {product.status}
+                      </Typography>
+                    )}
+                  </Stack>
                   <Typography
                     variant="body2"
                     sx={{
@@ -201,7 +189,7 @@ const Products = () => {
   );
 
   return (
-    <Box sx={{ margin: { xs: "2rem 1rem", sm: "4rem 2rem", md: "6rem 8rem" } }}>
+    <Box sx={{ margin: { xs: "4rem 1rem", sm: "4rem 2rem", md: "6rem 8rem" } }}>
       <Container maxWidth="lg">
         <Typography
           variant="h2"
