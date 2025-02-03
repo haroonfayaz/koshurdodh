@@ -15,10 +15,11 @@ import { useNavigate } from "react-router-dom";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MilkIcon from "@mui/icons-material/EmojiFoodBeverage";
 import QualityIcon from "@mui/icons-material/VerifiedUser";
-import backgroundImage from "../assets/images/main.webp"; // Update with your image
-import milk from "../assets/images/milk.png";
+import backgroundImage from "../assets/images/mainbg.jpg";
+import milk from "../assets/images/bottleMilk.jpeg";
 import yogurt from "../assets/images/yogurt.png";
 import cheese from "../assets/images/cheese.png";
+import milkPacket from "../assets/images/milkpacket.png";
 const features = [
   {
     icon: <MilkIcon sx={{ fontSize: 40, color: "#1a237e" }} />,
@@ -47,9 +48,15 @@ const products = [
     description: "Pure cow milk, straight from Kashmir valleys",
   },
   {
-    title: "Yogurt",
+    title: "Milk Packets",
+    image: milkPacket,
+    description: "Conveniently packed fresh milk",
+    status: "Coming Soon",
+  },
+  {
+    title: "Curd",
     image: yogurt,
-    description: "Traditional creamy yogurt made fresh daily",
+    description: "Traditional creamy Curd made fresh daily",
     status: "Coming Soon",
   },
   {

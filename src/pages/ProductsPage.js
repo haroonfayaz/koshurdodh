@@ -10,7 +10,7 @@ import {
   Divider,
   Stack,
 } from "@mui/material";
-import freshMilk from "../assets/images/fresh-milk.webp";
+import freshMilk from "../assets/images/bottleMilk.jpeg";
 import curd from "../assets/images/curd.jpeg";
 import cheese from "../assets/images/cheese.png";
 import butter from "../assets/images/butter.avif";
@@ -19,6 +19,8 @@ import processingEquipment from "../assets/images/processing-equipment.jpg";
 import testingKit from "../assets/images/testing-kit.jpg";
 import storageTank from "../assets/images/storage-tank.avif";
 import sanitizer from "../assets/images/sanitizer.jpeg";
+import milkPacket from "../assets/images/milkpacket.png";
+
 const Products = () => {
   const dairyProducts = [
     {
@@ -30,6 +32,14 @@ const Products = () => {
     },
     {
       id: 2,
+      name: "Milk Packets",
+      description:
+        "Conveniently packed fresh milk for easy storage and daily use. Ideal for households and businesses.",
+      image: milkPacket, // Add the correct image reference
+      status: "Coming Soon",
+    },
+    {
+      id: 3,
       name: "Curd/Yogurt",
       description:
         "Creamy, probiotic-rich curd made from fresh milk. Perfect for a healthy diet and better digestion.",
@@ -37,7 +47,7 @@ const Products = () => {
       status: "Coming Soon",
     },
     {
-      id: 3,
+      id: 4,
       name: "Paneer",
       description:
         "Fresh, homemade cottage cheese made from pure milk. High in protein and perfect for various culinary applications.",
@@ -45,7 +55,7 @@ const Products = () => {
       status: "Coming Soon",
     },
     {
-      id: 4,
+      id: 5,
       name: "Butter",
       description:
         "Pure dairy butter churned from fresh cream. Rich in taste and perfect for everyday use.",
@@ -53,7 +63,7 @@ const Products = () => {
       status: "Coming Soon",
     },
     {
-      id: 5,
+      id: 6,
       name: "Ghee",
       description:
         "Traditional clarified butter made from pure milk cream. Known for its rich aroma and authentic taste.",
@@ -64,28 +74,28 @@ const Products = () => {
 
   const hygieneProducts = [
     {
-      id: 6,
+      id: 7,
       name: "Milk Processing Equipment",
       description:
         "State-of-the-art pasteurization and homogenization equipment that ensures the highest quality and safety standards in milk processing.",
       image: processingEquipment,
     },
     {
-      id: 7,
+      id: 8,
       name: "Quality Testing Kits",
       description:
         "Advanced testing equipment for monitoring milk quality, including fat content, SNF, protein analysis, and contamination detection.",
       image: testingKit,
     },
     {
-      id: 8,
+      id: 9,
       name: "Storage Solutions",
       description:
         "Temperature-controlled bulk milk coolers and storage tanks that maintain optimal conditions for preserving milk freshness.",
       image: storageTank,
     },
     {
-      id: 9,
+      id: 10,
       name: "Dairy Plant Sanitizers",
       description:
         "Food-grade sanitizing solutions specifically designed for dairy equipment and processing areas, ensuring maximum hygiene.",
@@ -124,7 +134,7 @@ const Products = () => {
                   display: "flex",
                   flexDirection: "column",
                   transition: isComingSoon ? "none" : "transform 0.2s",
-                  "&:hover": !isComingSoon && {
+                  "&:hover": {
                     transform: "scale(1.02)",
                     boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
                   },
@@ -135,7 +145,6 @@ const Products = () => {
                   sx={{
                     height: 200,
                     objectFit: "cover",
-                    filter: isComingSoon ? "grayscale(80%)" : "none",
                   }}
                   image={product.image}
                   alt={product.name}
