@@ -135,10 +135,10 @@ const HomePage = () => {
                 px: 6,
                 fontSize: "1.2rem",
                 borderRadius: "50px",
-                backgroundColor: "#fff",
-                color: "#1a237e",
+                backgroundColor: "green",
+                color: "#fff",
                 "&:hover": {
-                  backgroundColor: "#1a237e",
+                  backgroundColor: "green",
                   color: "#fff",
                   transform: "translateY(-3px)",
                   boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
