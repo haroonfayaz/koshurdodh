@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MilkIcon from "@mui/icons-material/EmojiFoodBeverage";
 import QualityIcon from "@mui/icons-material/VerifiedUser";
-import backgroundImage from "../assets/images/mainbg.jpg";
+import backgroundImage from "../assets/images/main.webp";
 import milk from "../assets/images/bottleMilk.jpeg";
 import yogurt from "../assets/images/yogurt.png";
 import cheese from "../assets/images/cheese.png";
