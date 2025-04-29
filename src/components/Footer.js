@@ -161,7 +161,7 @@ const Footer = () => {
                 <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
                   <PhoneIcon color="primary" />
                   <Typography variant="body2" color="text.secondary">
-                    +91-6005141549{" "}
+                    +91-9070901069{" "}
                   </Typography>
                 </Box>
 
@@ -176,7 +176,7 @@ const Footer = () => {
                       href="mailto:Koshurdodh@gmail.com"
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      Koshurdodh@gmail.com
+                      contact@Koshurdodh.com
                     </a>{" "}
                   </Typography>
                 </Box>
