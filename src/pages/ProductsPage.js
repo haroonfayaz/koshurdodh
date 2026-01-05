@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Box,
-  Divider,
-  Stack,
-} from "@mui/material";
+import { Container, Typography, Grid, Box, Divider } from "@mui/material";
+import ProductCard from "../components/ProductCard";
+import SEOHead from "../components/SEOHead";
 import freshMilk from "../assets/images/bottleMilk.jpeg";
 import curd from "../assets/images/curd.jpeg";
 import cheese from "../assets/images/cheese.png";
@@ -35,7 +27,7 @@ const Products = () => {
       name: "Milk Packets",
       description:
         "Conveniently packed fresh milk for easy storage and daily use. Ideal for households and businesses.",
-      image: milkPacket, // Add the correct image reference
+      image: milkPacket,
       status: "Coming Soon",
     },
     {
@@ -107,138 +99,136 @@ const Products = () => {
     <>
       <Typography
         component="h2"
-        variant="h5"
+        variant="h4"
         align="left"
-        color="text.primary"
+        color="primary.main"
         gutterBottom
-        sx={{ fontFamily: "Matemasie", mt: 6, mb: 4 }}
+        sx={{
+          fontWeight: 600,
+          mt: 6,
+          mb: 4,
+          position: "relative",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            bottom: -8,
+            left: 0,
+            width: 60,
+            height: 4,
+            backgroundColor: "primary.main",
+            borderRadius: 2,
+          },
+        }}
       >
         {title}
       </Typography>
       <Grid container spacing={4}>
-        {products.map((product) => {
-          const isComingSoon = isDairySection && product.name !== "Fresh Milk";
-
-          return (
-            <Grid
-              item
-              key={product.id}
-              xs={12}
-              sm={6}
-              md={4}
-              sx={{ position: "relative" }}
-            >
-              <Card
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: isComingSoon ? "none" : "transform 0.2s",
-                  "&:hover": {
-                    transform: "scale(1.02)",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
-                  },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  sx={{
-                    height: 200,
-                    objectFit: "cover",
-                  }}
-                  image={product.image}
-                  alt={product.name}
-                />
-
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Stack
-                    direction="row"
-                    spacing={2}
-                    sx={{ alignItems: "center" }}
-                  >
-                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 600 }}>
-                      {product.name}
-                    </Typography>
-                    {product.status === "Coming Soon" && (
-                      <Typography
-                        sx={{
-                          display: "inline-block",
-                          px: 2,
-                          py: 0.5,
-                          color: "white",
-                          fontWeight: "bold",
-                          fontSize: "12px",
-                          textTransform: "uppercase",
-                          background:
-                            "linear-gradient(45deg, #388e3c, #2e7d32, #1b5e20)", // Different green shades
-                          clipPath:
-                            "polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%)",
-                        }}
-                      >
-                        {product.status}
-                      </Typography>
-                    )}
-                  </Stack>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#7f8c8d",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {product.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          );
-        })}
+        {products.map((product) => (
+          <Grid item key={product.id} xs={12} sm={6} md={4}>
+            <ProductCard product={product} />
+          </Grid>
+        ))}
       </Grid>
     </>
   );
 
   return (
-    <Box sx={{ margin: { xs: "4rem 1rem", sm: "4rem 2rem", md: "6rem 8rem" } }}>
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            textAlign: "center",
-            marginBottom: "2rem",
-            fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
-            fontFamily: "Matemasie",
-            color: "#1a237e",
-          }}
-        >
-          Our Products
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          sx={{
-            mb: 6,
-            maxWidth: "800px",
-            mx: "auto",
-            lineHeight: "1.8",
-          }}
-        >
-          We take pride in offering high-quality dairy products and maintaining
-          the highest standards of hygiene in our operations. Each product is
-          carefully processed and packaged to ensure maximum freshness and
-          nutritional value.
-        </Typography>
+    <>
+      <SEOHead
+        title="Our Products - Fresh Dairy & Hygiene Products | Koshur Dodh"
+        description="Explore our range of fresh dairy products including milk, curd, paneer, butter, and ghee. Plus quality dairy equipment and hygiene products in Kashmir."
+        keywords="dairy products Kashmir, fresh milk products, paneer Kashmir, butter ghee, dairy equipment, milk processing, hygiene products"
+      />
+      <Box
+        sx={{ margin: { xs: "4rem 1rem", sm: "4rem 2rem", md: "6rem 8rem" } }}
+      >
+        <Container maxWidth="lg">
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              textAlign: "center",
+              marginBottom: "2rem",
+              fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
+              fontFamily: "Matemasie",
+              color: "primary.main",
+            }}
+          >
+            Our Products
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            color="text.secondary"
+            sx={{
+              mb: 8,
+              maxWidth: "800px",
+              mx: "auto",
+              lineHeight: "1.8",
+              fontSize: "1.1rem",
+            }}
+          >
+            We take pride in offering high-quality dairy products and
+            maintaining the highest standards of hygiene in our operations. Each
+            product is carefully processed and packaged to ensure maximum
+            freshness and nutritional value.
+          </Typography>
 
-        <ProductSection
-          title="Dairy Products"
-          products={dairyProducts}
-          isDairySection={true}
-        />
-        <Divider sx={{ my: 6 }} />
-        <ProductSection title="Hygiene Products" products={hygieneProducts} />
-      </Container>
-    </Box>
+          <ProductSection
+            title="Dairy Products"
+            products={dairyProducts}
+            isDairySection={true}
+          />
+
+          <Divider
+            sx={{ my: 8, height: 2, backgroundColor: "primary.light" }}
+          />
+
+          <ProductSection
+            title="Hygiene & Equipment"
+            products={hygieneProducts}
+          />
+
+          {/* Call to Action */}
+          <Box
+            sx={{
+              mt: 10,
+              p: 6,
+              backgroundColor: "primary.main",
+              borderRadius: 4,
+              textAlign: "center",
+              backgroundImage:
+                "linear-gradient(135deg, #2e7d32 0%, #4caf50 100%)",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: "white",
+                mb: 2,
+                fontWeight: 600,
+              }}
+            >
+              Interested in Our Products?
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255, 255, 255, 0.9)",
+                mb: 4,
+                maxWidth: "600px",
+                mx: "auto",
+                lineHeight: 1.7,
+              }}
+            >
+              Contact us today to learn more about our products, pricing, and
+              delivery options. We're here to serve you with the finest dairy
+              products Kashmir has to offer.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 
