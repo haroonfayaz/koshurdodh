@@ -1,14 +1,12 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', "Poppins",
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',"poppins"
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
-/* Enhanced phone input styling */
 .react-tel-input .form-control {
   width: 100% !important;
   height: 56px !important;
@@ -16,12 +14,6 @@ body {
   background-color: rgba(255, 255, 255, 0.9) !important;
   border: 1px solid rgba(0, 0, 0, 0.23) !important;
   border-radius: 4px !important;
-  transition: all 0.3s ease !important;
-}
-
-.react-tel-input .form-control:focus {
-  border-color: #2e7d32 !important;
-  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2) !important;
 }
 
 .react-tel-input .flag-dropdown {
@@ -33,100 +25,9 @@ body {
 .react-tel-input .selected-flag {
   background-color: transparent !important;
   border-radius: 4px 0 0 4px !important;
-  transition: all 0.3s ease !important;
-}
-
-.react-tel-input .selected-flag:hover {
-  background-color: rgba(46, 125, 50, 0.04) !important;
 }
 
 .react-tel-input .country-list {
-  border-radius: 8px !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-}
-
-.react-tel-input .country-list .country:hover {
-  background-color: rgba(46, 125, 50, 0.08) !important;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2e7d32;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1b5e20;
-}
-
-/* Loading animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
-  }
-}
-
-/* Utility classes */
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.slide-in-up {
-  animation: slideInUp 0.8s ease-out;
-}
-
-/* Focus styles for accessibility */
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #2e7d32;
-  outline-offset: 2px;
-}
-
-/* Image optimization */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Print styles */
-@media print {
-  .no-print {
-    display: none !important;
-  }
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
 }
