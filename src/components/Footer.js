@@ -161,7 +161,7 @@ const Footer = () => {
                 <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
                   <PhoneIcon color="primary" />
                   <Typography variant="body2" color="text.secondary">
-                    +91-9070901069{" "}
+                    +91-9103169395{" "}
                   </Typography>
                 </Box>
 
@@ -266,7 +266,7 @@ const Footer = () => {
                   </IconButton>
                   <IconButton
                     component="a"
-                    href="https://wa.me/6005141549"
+                    href="https://wa.me/9103169395"
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
